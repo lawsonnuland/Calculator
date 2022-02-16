@@ -1,21 +1,44 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+button {
+    padding: 5px;
+    border: black solid 3px;
+    box-shadow: 2px 2px rgb(0,0,0, 0.2);
+    border-radius: 2px;
+    width: 40px;
+}
+
+button:active {
+    background-color: gray;
+}
+
+.action {
+    background-color: pink;
+}
+
 #frame {
     border: black solid 3px;
     border-radius: 10px;
     background-color: lightgray;
     padding: 10px;
-    box-shadow: 5px 5px;
+    box-shadow: 5px 5px rgb(0,0,0, 0.4);
     margin: auto;
-    width: 40%;
+    width: 300px;
 }
 
 #display {
     border: black solid 1px;
     border-radius: 3px;
     background-color: aqua;
+    height: 1.5em;
 }
 
 #buttons {
     margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
 }
 
 #calculationText {
@@ -23,8 +46,16 @@
     margin: 3px;
 }
 
-button {
-    padding: 5px;
-    border: black solid 3px;
-    box-shadow: 2px 2px;
+#digits {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    gap: 5px;
+}
+
+#actionButtons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    gap: 5px;
 }
