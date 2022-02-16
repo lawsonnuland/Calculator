@@ -1,0 +1,30 @@
+#frame {
+    border: black solid 3px;
+    border-radius: 10px;
+    background-color: lightgray;
+    padding: 10px;
+    box-shadow: 5px 5px;
+    margin: auto;
+    width: 40%;
+}
+
+#display {
+    border: black solid 1px;
+    border-radius: 3px;
+    background-color: aqua;
+}
+
+#buttons {
+    margin-top: 10px;
+}
+
+#calculationText {
+    text-align: right;
+    margin: 3px;
+}
+
+button {
+    padding: 5px;
+    border: black solid 3px;
+    box-shadow: 2px 2px;
+}
