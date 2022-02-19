@@ -3,8 +3,10 @@ let secondNumber;
 let displayContent = "";
 let result = 0;
 let operatorPresent = false;
+let decimalPresent = false;
 const display = document.querySelector('#calculationText');
 const digits = document.querySelectorAll('.digit');
+const decimal = document.querySelector('.decimal');
 const operators = document.querySelectorAll('.operator');
 const clearButton = document.querySelector('#clear');
 
@@ -21,6 +23,7 @@ operators.forEach((operator) => {
             displayContent += operator.value;
             updateDisplay();
             operatorPresent = true;
+            decimalPresent = false;
         } else {
             resolve(); 
             if (operatorPresent == false) {
@@ -30,6 +33,16 @@ operators.forEach((operator) => {
             updateDisplay();
         }
     });
+});
+
+decimal.addEventListener(('click'), () => {
+    if (decimalPresent == false){
+        displayContent += decimal.value;
+        decimalPresent = true;
+        updateDisplay();
+    } else {
+        alert("Buddy, you only need one period.")
+    }
 });
 
 clearButton.addEventListener(('click'), () => {
@@ -83,6 +96,7 @@ function clear() {
     secondNumber = 0;
     displayContent = "";
     operatorPresent = false;
+    decimalPresent =  false;
     result = 0;
     updateDisplay();
 }
@@ -90,14 +104,11 @@ function clear() {
 function resolve() {
     if (operatorPresent == true) {
         let equationArray = displayContent.split(' ');
-        console.log(equationArray);
         if (equationArray.length > 2 && equationArray[2] != '') {
             firstNumber = parseFloat(equationArray[0]);
-            console.log(firstNumber);
             secondNumber = parseFloat(equationArray[2]);
-            console.log(secondNumber);
             operate(firstNumber, secondNumber, equationArray[1]);
-            console.log(result);
+            result = 
             displayContent = result;
             operatorPresent = false;
             updateDisplay();
